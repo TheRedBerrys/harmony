@@ -3,5 +3,18 @@
 		<title>Harmony</title>
 	</head>
 	<body>
+		<p id="p">We haven't checked for compatibility yet.</p>
 	</body>
+	<script type="text/javascript">
+		function hasGetUserMedia() {
+		  return !!(navigator.getUserMedia || navigator.webkitGetUserMedia ||
+			    navigator.mozGetUserMedia || navigator.msGetUserMedia);
+		}
+		var p = document.getElementById("p");
+		if (hasGetUserMedia()) {
+			p.innerHTML = "You're compatible!";
+		} else {
+			p.innerHTML = "You're not compatible. Sorry.";
+		}
+	</script>
 </html>
